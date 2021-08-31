@@ -2,22 +2,32 @@ const Category = require('./Category');
 const Article = require('./Article');
 const User = require('./User');
 
-User.hasMany(Article, {
-    through: { 
-        model: Category,
-        unique: false
+
+User.hasMany(Category, {
+    foreignKey: 'user_id'
     },
+);
 
-    as: 'viewed_articles'
+Category.belongsTo(User, {
+    foreignKey: 'user_id'
+    },
+);
+
+Category.belongsTo(Article, {
+    foreignKey: 'category_id'
+},
+);
+
+Article.hasMany(Category, {
+    foreignKey: 'category_id'
 });
 
-Article.belongsToMany(User, {
-    through: {
-    model: Category,
-    unique: false,
-}, 
-
-    as: 'article_users'
+User.hasMany(Article, {
+    through: Category
 });
+
+
+
+
 
 module.exports = { Category, Article, User };

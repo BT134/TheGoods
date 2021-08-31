@@ -12,23 +12,44 @@ Article.init(
       allowNull: false, 
       primaryKey: true,
       autoIncrement: true,
+      unique: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false, 
+
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: "user",
+              key: "id",
+              unique: false,
+        },
     },
+
+    article_title: {
+        type: DataTypes.STRING,
+      allowNull: false,
+    },
+
     category_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        foreignKey: true,
-  },
+        references: {
+            model: "category",
+              key: "id",
+              unique: false,
+        },
+
+    },
 },
+
+    
+    
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Category',
+    modelName: 'article',
   }
 );
 
