@@ -62,5 +62,7 @@ SO THAT
 ## Contact or Feedback 
 
 > Pasgen Manley [Twitter](https://twitter.com/ManleyPasgen) - pasgenmanley@gmail.com
+
 > Shaun Tobin [Twitter]() - shauntobin88@gmail.com
+
 > Brenton Turnor [Twitter](https://twitter.com/BTurnor) - brenton.turnor@hotmail.com
