@@ -13,18 +13,25 @@ Category.belongsTo(User, {
     },
 );
 
-Category.belongsTo(Article, {
+Category.hasMany(Article, {
     foreignKey: 'category_id'
-},
+    },
 );
 
-Article.hasMany(Category, {
+Article.belongsTo(Category, {
     foreignKey: 'category_id'
-});
+    },
+);
 
 User.hasMany(Article, {
     through: Category
-});
+    },
+);
+
+Article.hasMany(User, {
+    
+    },
+);
 
 
 
