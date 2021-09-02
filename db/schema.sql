@@ -4,5 +4,7 @@ DROP DATABASE IF EXISTS articles_db;
 -- CREATE DATABASE
 CREATE DATABASE articles_db;
 
+
 -- USE DATABASE
 USE articles_db;
+
