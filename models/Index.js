@@ -24,14 +24,13 @@ Article.belongsTo(Category, {
 );
 
 User.hasMany(Article, {
-    through: Category
-    },
+    foreignKey: 'user_id'
+}
 );
 
-Article.hasMany(User, {
-    
-    },
-);
+Article.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
 
 
