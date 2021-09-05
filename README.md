@@ -49,8 +49,9 @@ SO THAT
 * [Express.js](https://expressjs.com/)
 * [MySQL](https://www.mysql.com/)
 * [Sequelize](https://sequelize.org/)
+* [Gulp](https://gulpjs.com/)
 
-## Author
+## Authors
 
 > Pasgen Manley - [https://github.com/Pasgen-Manley](https://github.com/Pasgen-Manley)
 
