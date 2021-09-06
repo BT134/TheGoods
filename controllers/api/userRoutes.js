@@ -24,7 +24,7 @@ router.post('/login', async (req, res) => {
 		const userData = await User.findOne({ where: { email: req.body.email } });
 
 		if (!userData) {
-			res.status(400).json({ message: 'Incorrect email or password, please try again' });
+			res.status(400).json({ message: 'Incorrect email, please try again' });
 			return;
 		}
 
@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
 		const validPassword = await userData.checkPassword(req.body.password);
 
 		if (!validPassword) {
-			res.status(400).json({ message: 'Incorrect email or password, please try again' });
+			res.status(400).json({ message: 'Incorrect password, please try again' });
 			return;
 		}
 
@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
 			res.json({ user: userData, message: 'You are now logged in!' });
 		});
 	} catch (err) {
-		res.status(400).json(err);
+		res.status(500).json(err);
 	}
 });
 
