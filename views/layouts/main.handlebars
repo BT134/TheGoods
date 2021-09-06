@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TheGoods.</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  <link rel="stylesheet" href="/public/css/jass.css">
-  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -15,14 +14,40 @@
     <h1>
       TheGoods.
     </h1>
+   
     <!-- Only display if the user is logged in -->
     {{#if logged_in}}
-    <nav>
-      <a href="/">Home</a>
-      <a href="/categories">My Categories</a>
-      <a href="/discover">Discover</a>
-      <button class="btn" id="logout">logout</button>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Categories</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">About</a>
+          <a class="dropdown-item" href="#">Contact</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Report an issue</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Search</a>
+      </li>
+    </ul>
+      <button class="btn float-right btn-outline-success my-2 my-sm-0" type="submit" id="logout">Logout</button>
+  </div>
+</nav>
     {{/if}}
   </header>
   <main class="container container-fluid mt-5">
@@ -36,6 +61,7 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  
 </body>
 
 </html>
