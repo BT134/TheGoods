@@ -20,8 +20,10 @@
             <img class="card-img-top" src="{{article.urlToImage}}">
             <div class="card-body">
               <h5 class="card-title"><a href="{{article.url}}" target="_blank">{{article.title}}</a></h5>
-              <p class="card-text">{{article.description}}</p>
-              <button class="" type="button" src="./assets/images/icons8-save-24.png"></button>
+              <p class="card-text"><span>{{article.description}}</span></p>
+              <button class="save-cat-btn" type="button" data-name="{{article.title}}" src="./assets/images/icons8-save-24.png">
+                <i class="fa fa-save" style="font-size:24px"></i>
+              </button>
             </div>
           </div>
           {{/each}}
@@ -30,4 +32,4 @@
     </div>
   </div>
 </div>
-<script href="./js/discover.js"></script>
+<!--<script href="./js/discover.js"></script>-->
