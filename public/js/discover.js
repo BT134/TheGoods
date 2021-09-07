@@ -17,8 +17,6 @@ newsSearchBtn.on('submit', function(event){
   } else {
     window.alert("wrong");
     window.location.href("/news/discover?title=" + newsSearchInput);
-  
-
   }
 });
 
