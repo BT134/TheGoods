@@ -23,7 +23,7 @@
     "nodemon": "^2.0.3"
   },
   "dependencies": {
-    "axios": "^0.21.3",
+    "axios": "^0.21.4",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
