@@ -1,1 +1,21 @@
-test
+<div class="row">
+    <div class="col col-lg-2">
+<ul class="nav flex-column">
+    Categories:
+    {{#each categories as |category|}}
+  <li class="nav-item">
+    <a class="nav-link active" href="{{category.category_name}}">{{category.category_name}}</a>
+  </li>
+    {{/each}}
+</ul>
+</div>
+<div class="col col-md-auto">
+Your Articles:
+{{#each articles as |article|}}
+
+
+{{/each}}
+</div>
+
+</div>
+
