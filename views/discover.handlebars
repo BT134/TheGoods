@@ -4,7 +4,7 @@
       Browse News Articles from all Around the Web!
     </h1>
     <form action="" class="search-bar">
-	    <input type="search" id="news-search" name="search" pattern=".*\S.*" required>
+	    <input type="search" id="news-search" name="title" pattern=".*\S.*" required>
 	    <button class="search-btn" id="news-search-btn" type="submit">
 		  <span>Search</span>
 	    </button>
@@ -15,11 +15,19 @@
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col" id="news-grid">
-
+          {{#each articles as |article|}}
+          <div class="card shadow-sm p-3 mb-5 bg-body rounded" style="width: 18rem;">
+            <img class="card-img-top" src="{{article.urlToImage}}">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{{article.url}}" target="_blank">{{article.title}}</a></h5>
+              <p class="card-text">{{article.description}}</p>
+              <button class="btn" type="button" src="./assets/images/icons8-save-24.png"></button>
+            </div>
+          </div>
+          {{/each}}
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<script src="../public/js/discover.js"></script>
+<script href="./js/discover.js"></script>
