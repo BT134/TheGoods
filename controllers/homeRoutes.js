@@ -5,6 +5,14 @@ const withAuth = require('../utils/auth');
 // Prevent non logged in users from viewing the homepage
 router.get('/', async (req, res) => {
 	try {
+		// Find the logged in user based on the session ID
+		const userData = await User.findByPk(req.session.user_id, {
+			attributes: { exclude: [ 'password' ] },
+			include: [ { model: Category } ]
+		});
+
+		const user = userData.get({ plain: true });
+		
 		//const articleData = await article.findAll({
 		//	include: [
 		//		{
@@ -18,6 +26,7 @@ router.get('/', async (req, res) => {
 		//const articles = articleData.map((blog) => articles.get({ plain: true }));
 
 		res.render('homepage', {
+			categories: user.categories,
 			//articles,
 			// Pass the logged in flag to the template
 			logged_in: req.session.logged_in
@@ -56,6 +65,7 @@ router.get('/categories', withAuth, async (req, res) => {
 		});
 
 		const user = userData.get({ plain: true });
+		console.log(userData)
 
 		res.render('categories', {
 			...user,
