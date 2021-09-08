@@ -76,7 +76,7 @@ router.get('/categories', withAuth, async (req, res) => {
 	}
 });
 
-router.get('/categories/remove', withAuth, async (req, res) => {
+router.get('/remove', withAuth, async (req, res) => {
 	try {
 		// Find the logged in user based on the session ID
 		const userData = await User.findByPk(req.session.user_id, {
@@ -87,7 +87,7 @@ router.get('/categories/remove', withAuth, async (req, res) => {
 		const user = userData.get({ plain: true });
 		console.log(userData)
 
-		res.render('categories', {
+		res.render('remove', {
 			...user,
 			logged_in: true
 		});

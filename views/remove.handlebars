@@ -1,16 +1,26 @@
 <div class="columns is-mobile">
   <div class="column is-4 is-offset-4 mt-6">
     <h2 class="page-title is-size-3 has-text-centered pb-2">Remove a Category</h2>
-    <form class="box login-form">
+    <form class="box remove-form">
         <div class="field">
           <label class="label"></label>
+        
+        Categories:
         </div>
-        <button class="button is-danger is-outlined" type="submit">
-        <span>Delete</span>
-        <span class="icon is-small">
-        <i class="fas fa-times"></i>
-    </span>
-  </button>
+        {{#each categories as |category|}}
+        <ul class="">
+          <li class="p-2">
+            <a class="has-text-primary pr-2" id="{{category.id}}" href="{{category.category_name}}">{{category.category_name}}</a>
+              <button class="button is-small is-danger is-rounded is-outlined" type="submit" id="delete-btn">
+                <span>Delete</span><span class="icon is-small"><i class="fas fa-times"></i></span>
+              </button>
+            </li>
+        </ul>
+        {{/each}}
     </form>
   </div>
+    
+  </div>
 </div>
+
+<script src="./js/remove.js"></script>
