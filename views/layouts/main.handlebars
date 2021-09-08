@@ -6,54 +6,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TheGoods.</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous"/>
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2 bg-light">
-    <h1>
-      TheGoods.
-    </h1>
-   </header>
-    <!-- Only display if the user is logged in -->
-    {{#if logged_in}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/categories">Categories</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          More
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">About</a>
-          <a class="dropdown-item" href="#">Contact</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Report an issue</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/news/discover">Search For Articles</a>
-      </li>
-    </ul>
-    <div class="justify-content-end">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="logout">Logout</button>
-    </div>
-  
-</nav>
-    {{/if}}
+      <header>
+        <nav class="navbar p-2" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <div class="is-size-3 has-text-weight-bold">TheGoods.</div>
+            </div>
+            <!-- Only display if the user is logged in -->
+            {{#if logged_in}}
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start pl-2">
+                    <a class="navbar-item" href="/">Home</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Categories
+                        </a>
 
-  </header>
-  <main class="container">
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="/categories">
+                                Add a Category
+                            </a>
+                            <a class="navbar-item" href="/categories/remove">
+                                Delete a Catagory
+                            </a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
+                        </a>
 
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                About
+                            </a>
+                            <a class="navbar-item">
+                                Contact
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                                Report an issue
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <a class="navbar-item has-icons-right" href="/news/discover">Search&nbsp;   
+                        <span class="icon is-right">
+                            <i class="fas fa-search"></i>
+                          </span>
+                    </a>
+                    
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary is-outlined" type="submit" id="logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+      {{/if}}
+    </header>
+
+  <main class="p-2">
     {{{ body }}}
   </main>
-  <footer >
+  
+  <footer id="footer">
       
   </footer>
 

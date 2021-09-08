@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const axios = require('axios').default;
+const { User, Article, Category } = require('../models');
 
 
 router.get('/discover', async (req, res) => {
@@ -11,20 +12,20 @@ router.get('/discover', async (req, res) => {
     url = "https://newsapi.org/v2/everything?q=keyword&pageSize=5&apiKey=596d896758df478f8836a97d5d0931c9"
   }
   axios.get(url)
-  .then(function (response) {
+  .then (function(response) {
     // handle success
-    console.log(response.data);
+   // console.log(response.data);
 
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = User.findByPk(req.session.user_id, {
 			attributes: { exclude: [ 'password' ] },
 			include: [ { model: Category } ]
 		});
 
-		const user = userData.get({ plain: true });
+		//const user = userData.get({ plain: true });
     //res.send(response.data);
     res.render('discover', {
       articles: response.data.articles,
-      categories: user.categories,
+      categories: userData.categories,
     });
   })
   .catch(function (error) {
