@@ -1,16 +1,28 @@
-<div>
+<div class="columns is-mobile">
+  <div class="column is-5 is-offset-3 has-text-centered">
+<div class="box">
   <div class="container">
-    <h1>
+    <h1 class="is-size-3 pb-2">
       Browse News Articles from all Around the Web!
     </h1>
+    <div class="field has-addons">
+      <div class="control is-expanded">
     <form action="" class="search-bar">
-	    <input type="search" id="news-search" name="title" pattern=".*\S.*" required>
-	    <button class="search-btn" id="news-search-btn" type="submit">
+	    <input class="input" type="search" id="news-search" name="title" pattern=".*\S.*" placeholder="e.g. Gaming">
+      </div>
+      <div class="control">
+	    <button class="button is-primary search-btn" id="news-search-btn" type="submit">
 		  <span>Search</span>
 	    </button>
+      </div>
     </form>
+      
+      </div>
   </div>
-  
+</div>
+</div>
+</div>
+
   <div class="py-5">
     <div class="container">
       {{#each articles as |article|}}
@@ -36,5 +48,5 @@
       {{/each}}
     </div>
   </div>
-</div>
+
 <!--<script href="./js/discover.js"></script>-->

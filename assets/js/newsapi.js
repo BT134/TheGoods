@@ -21,7 +21,7 @@ newsSearchBtn.on('submit', function(event){
 // Fetch request for NEWS API
 function searchNewsAPI (newsSearchInput) {
 
-  let queryURL = 'https://newsapi.org/v2/everything?qInTitle=' + newsSearchInput + '&pageSize=5&apiKey=' + APIKey;
+  let queryURL = 'https://newsapi.org/v2/everything?qInTitle=' + newsSearchInput + '&pageSize=8&apiKey=' + APIKey;
 
   fetch(queryURL)
     .then(function (response) {

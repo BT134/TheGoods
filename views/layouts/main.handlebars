@@ -15,13 +15,12 @@
       <header>
         <nav class="navbar p-2" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <div class="is-size-3 has-text-weight-bold">TheGoods.</div>
+                <div class="is-size-3 has-text-weight-bold"><a class="has-text-dark" href="/">TheGoods.</a></div>
             </div>
             <!-- Only display if the user is logged in -->
             {{#if logged_in}}
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start pl-2">
-                    <a class="navbar-item" href="/">Home</a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
                             Categories
@@ -31,7 +30,7 @@
                             <a class="navbar-item" href="/categories">
                                 Add a Category
                             </a>
-                            <a class="navbar-item" href="/categories/remove">
+                            <a class="navbar-item" href="/remove">
                                 Delete a Catagory
                             </a>
                         </div>
