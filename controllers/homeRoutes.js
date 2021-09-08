@@ -76,6 +76,26 @@ router.get('/categories', withAuth, async (req, res) => {
 	}
 });
 
+router.get('/categories/remove', withAuth, async (req, res) => {
+	try {
+		// Find the logged in user based on the session ID
+		const userData = await User.findByPk(req.session.user_id, {
+			attributes: { exclude: [ 'password' ] },
+			include: [ { model: Category } ]
+		});
+
+		const user = userData.get({ plain: true });
+		console.log(userData)
+
+		res.render('categories', {
+			...user,
+			logged_in: true
+		});
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
 router.get('/categories/:id', async (req, res) => {
 	try {
 		const categoryData = await user.findByPk(req.params.id, {

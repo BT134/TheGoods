@@ -1,5 +1,5 @@
 <div>
-  <header class="">
+  <div class="container">
     <h1>
       Browse News Articles from all Around the Web!
     </h1>
@@ -9,13 +9,16 @@
 		  <span>Search</span>
 	    </button>
     </form>
-  </header>
+  </div>
   
-  <div class="py-5 bg-light">
+  <div class="py-5">
     <div class="container">
-      <div class="row">
+      {{#each articles as |article|}}
+      <div class="card-custom">
+        
+        <div class="card.columns">
         <div class="card-deck" id="news-grid">
-          {{#each articles as |article|}}
+          
           <div class="card p-3 mb-5 rounded" style="width: 18rem;">
             <img class="card-img-top" src="{{article.urlToImage}}">
             <div class="card-body">
@@ -26,9 +29,11 @@
               </button>
             </div>
           </div>
-          {{/each}}
+          
+        </div>
         </div>
       </div>
+      {{/each}}
     </div>
   </div>
 </div>
