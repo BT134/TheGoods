@@ -30,6 +30,7 @@ router.get('/discover', withAuth, async (req, res) => {
     res.render('discover', {
       articles: response.data.articles,
       categories: userData.categories,
+      logged_in: req.session.logged_in
     });
   })
   .catch(function (error) {
