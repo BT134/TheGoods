@@ -23,8 +23,8 @@
 </div>
 </div>
 
-  <div class="py-5">
-    <div class="container">
+<div class="py-5">
+  <div class="container">
       {{#each articles as |article|}}
       <div class="card-custom">
         
@@ -36,17 +36,28 @@
             <div class="card-body">
               <h5 class="card-title"><a href="{{article.url}}" target="_blank">{{article.title}}</a></h5>
               <p class="card-text"><span>{{article.description}}</span></p>
-              <button class="save-cat-btn" type="button" data-name="{{article.title}}" src="./assets/images/icons8-save-24.png">
+              
+            </div>
+            <footer class="card-footer" style="width: 15%;">
+              <button class="save-cat-btn card-footer-item" id="save-cat-btn" type="button" data-name="{{article.title}}" src="./assets/images/icons8-save-24.png">
                 <i class="fa fa-save" style="font-size:24px"></i>
               </button>
-            </div>
+            </footer>
           </div>
           
         </div>
         </div>
       </div>
+      
       {{/each}}
-    </div>
   </div>
+  </div>
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content" id="categories">
+            
+    </div>
+</div>
 
-<!--<script href="./js/discover.js"></script>-->
+<script src="/public/js/saveToCategory.js"></script>
+
