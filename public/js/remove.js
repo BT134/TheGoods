@@ -4,9 +4,12 @@
 async function deleteFormHandler(event) {
     event.preventDefault();
 
-    // get the id for the category
-    const id = document.querySelector({ id: category });
+    console.log(event)
 
+    // get the id for the category
+    const id = this.dataset.categoryid;
+  
+  console.log(id)
     // delete the post with an async function
     const response = await fetch(`/categories/${id}`, {
         method: 'DELETE'
@@ -16,8 +19,9 @@ async function deleteFormHandler(event) {
         document.location.replace('/');
         // otherwise, display the error
       } else {
+        console.log(response)
         alert(response.statusText);
       }
   }
   
-  document.querySelector('#delete-btn').addEventListener('click', deleteFormHandler);
+  document.getElementById('delete-btn').addEventListener('click', deleteFormHandler);

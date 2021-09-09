@@ -3,7 +3,7 @@
 ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 ## Description
 
-> 
+> A web app that allows a user to search for particular articles and save them to their personalized categories so that they can refer back to them at a later date. 
 
  ## Table of Contents 
   - [Description](#description)
@@ -18,21 +18,24 @@
 
 ## User Story
 ```
-AS A developer 
-I WANT 
-SO THAT 
+AS A USER to be able to search for news articles by title or category.
+I WANT to be able to create my own categories and be able to save the searched news articles into.
+SO THAT I can come back to them at a later date.
 ```
 
 ## Installation/Usage
 
+> App can be viewed [HERE]()
+
+To use the app, create a login, then it will automatically log you in and take you to the main page. Add or Delete a category with the categories tab. Search for a news article with the Search tab.  
 
 ## Visual Demo
-
+>Login Page
+><img src=".\assets\images\Screenshot3.JPG" alt= "Screenshot of login page">
+>Homepage
 ><img src=".\assets\images\Screenshot.JPG" alt= "Screenshot of homepage">
-
+>News Search
 ><img src=".\assets\images\Screenshot2.JPG" alt= "Screenshot of search page">
-
-> App can be viewed [HERE]()
 
 ## Tests
 
@@ -69,3 +72,7 @@ SO THAT
 > Shaun Tobin [Twitter]() - shauntobin88@gmail.com
 
 > Brenton Turnor [Twitter](https://twitter.com/BTurnor) - brenton.turnor@hotmail.com
+
+## Development
+
+> This page is still under development. More to be updated shortly. Please feel free to provide us with feedback on what you would like to see or add to the app. 

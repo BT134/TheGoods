@@ -86,6 +86,8 @@ router.put('/:id', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   //delete a category by its id value
+  console.log(req.params.id)
+  console.log(req.session.user_id)
   try {
     const categoryData = await Category.destroy({
       where: {
