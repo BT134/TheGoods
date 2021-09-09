@@ -28,13 +28,15 @@ SO THAT
 
 ## Visual Demo
 
-><img src="" alt= "">
+><img src=".\assets\images\Screenshot.JPG" alt= "Screenshot of homepage">
+
+><img src=".\assets\images\Screenshot2.JPG" alt= "Screenshot of search page">
 
 > App can be viewed [HERE]()
 
 ## Tests
 
-> The tests in this application verifies data formatting using Jest.
+> No tests were run on this app.
 
 ## Built With
 
