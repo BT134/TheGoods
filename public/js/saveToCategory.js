@@ -1,4 +1,4 @@
-//let categorySaveBtn = $('.save-cat-btn');
+// const categorySaveBtn = $("#save-cat-btn");
 
 // categorySaveBtn.on("click", async function(event) {
 //   event.preventDefault();
@@ -35,12 +35,14 @@
 
 // });
 
-const saveCatBtn = document.querySelector('#save-cat-btn');
+const saveCatBtn = document.querySelector('.save-cat-btn');
 const modalBg = document.querySelector('.modal-background');
 const modal = document.querySelector('.modal');
 
 saveCatBtn.addEventListener('click', () => {
   modal.classList.add('is-active');
+  
+  
 });
 
 modalBg.addEventListener('click', () => {

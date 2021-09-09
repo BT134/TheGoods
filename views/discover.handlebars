@@ -55,9 +55,27 @@
   <div class="modal">
     <div class="modal-background"></div>
     <div class="modal-content" id="categories">
+      <div class="box">
+        <article class="media">
+          <div class="media-content">
+            <p>
+              <strong>Which category would you like to save this to?</strong>
+            </p>
+            <ul>
+              {{#each categories as |category|}}
+              <li>
+                {{category.category_name}}
+              </li>
+              
+      
+              {{/each}}
+            </ul>
             
+          </div>
+        </article>
+      </div>
     </div>
 </div>
 
-<script src="/public/js/saveToCategory.js"></script>
+<script src="/js/saveToCategory.js"></script>
 
