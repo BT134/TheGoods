@@ -2,8 +2,18 @@ const router = require('express').Router();
 const { User, Article, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/', (req, res) => {
+	if (req.session.logged_in) {
+	  res.redirect('/homepage');
+	  return;
+	}
+	else (!req.session.logged_in)  
+	res.render('login');
+  });  
+
+
 // Prevent non logged in users from viewing the homepage
-router.get('/', async (req, res) => {
+router.get('/homepage', async (req, res) => {
 	try {
 		// Find the logged in user based on the session ID
 		const userData = await User.findByPk(req.session.user_id, {
@@ -39,7 +49,7 @@ router.get('/', async (req, res) => {
 router.get('/login', (req, res) => {
 	// If a session exists, redirect the request to the homepage
 	if (req.session.logged_in) {
-		res.redirect('/');
+		res.redirect('/homepage');
 		return;
 	}
 
@@ -49,7 +59,7 @@ router.get('/login', (req, res) => {
 router.get('/register', (req, res) => {
 	// If a session exists, redirect the request to the login page
 	if (req.session.logged_in) {
-		res.redirect('/');
+		res.redirect('/homepage');
 		return;
 	}
 
