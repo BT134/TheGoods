@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { User, Article, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
+
+// Prevent non logged in users from viewing the homepage
 router.get('/', (req, res) => {
 	if (req.session.logged_in) {
 	  res.redirect('/homepage');
@@ -11,8 +13,6 @@ router.get('/', (req, res) => {
 	res.render('login');
   });  
 
-
-// Prevent non logged in users from viewing the homepage
 router.get('/homepage', async (req, res) => {
 	try {
 		// Find the logged in user based on the session ID
@@ -38,7 +38,6 @@ router.get('/homepage', async (req, res) => {
 		res.render('homepage', {
 			categories: user.categories,
 			//articles,
-			// Pass the logged in flag to the template
 			logged_in: req.session.logged_in
 		});
 	} catch (err) {
