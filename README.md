@@ -25,7 +25,7 @@ SO THAT I can come back to them at a later date.
 
 ## Installation/Usage
 
-> App can be viewed [HERE]()
+> App can be viewed [HERE](https://morning-ravine-85802.herokuapp.com/)
 
 To use the app, create a login, then it will automatically log you in and take you to the main page. Add or Delete a category with the categories tab. Search for a news article with the Search tab.  
 
