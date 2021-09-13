@@ -42,7 +42,7 @@ User.init(
 				return newUserData;
 			},
 		},
-		sequelize: sequelize,
+		sequelize,
 		timestamps: false,
 		freezeTableName: true,
 		underscored: true,

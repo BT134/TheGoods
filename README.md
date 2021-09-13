@@ -8,7 +8,7 @@
  ## Table of Contents 
   - [Description](#description)
   - [User Story](#user-story)
-  - [Installation](#installation)
+  - [Usage](#usage)
   - [Visual Demo](#visual-demo)
   - [Tests](#tests)
   - [Built With](#built-with)
@@ -23,9 +23,9 @@ I WANT to be able to create my own categories and be able to save the searched n
 SO THAT I can come back to them at a later date.
 ```
 
-## Installation/Usage
+## Usage
 
-> App can be viewed [HERE]()
+> App can be viewed [HERE](https://morning-ravine-85802.herokuapp.com/)
 
 To use the app, create a login, then it will automatically log you in and take you to the main page. Add or Delete a category with the categories tab. Search for a news article with the Search tab.  
 
