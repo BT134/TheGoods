@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
     });
 
     if (!categoryData) {
-      res.status(200).json({ message: 'Category does not exist.' });
+      res.status(404).json({ message: 'Category does not exist.' });
       return;
     }
 
@@ -74,7 +74,7 @@ router.put('/:id', withAuth, async (req, res) => {
       });
 
     if (!categoryData) {
-      res.status(200).json({ message: 'Category does not exist.'});
+      res.status(404).json({ message: 'Category does not exist.'});
       return;
     }
 
